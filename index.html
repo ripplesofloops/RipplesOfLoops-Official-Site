@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即将到来 Coming Soon | 涟环 官方网站Ripples of Loops Official Site </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500&family=Montserrat:wght@200;400&display=swap');
+
+        :root {
+            --accent-color: #78909c; 
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #2c3e50;
+            font-family: 'Noto Serif SC', serif;
+            overflow: hidden;
+        }
+
+        .sans {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* 浅色涟漪动画 */
+        .ripple-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+
+        .ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(120, 144, 156, 0.12);
+            border-radius: 50%;
+            animation: ripple-out 12s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+        }
+
+        .ripple:nth-child(2) { animation-delay: 3s; }
+        .ripple:nth-child(3) { animation-delay: 6s; }
+        .ripple:nth-child(4) { animation-delay: 9s; }
+
+        @keyframes ripple-out {
+            0% { width: 0; height: 0; opacity: 0; }
+            10% { opacity: 1; }
+            100% { width: 160vmax; height: 160vmax; opacity: 0; }
+        }
+
+        /* 入场动画 */
+        .fade-in-up {
+            animation: fadeInUp 1.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); filter: blur(15px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        /* 社交图标样式 */
+        .social-link {
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            color: #b0bec5;
+        }
+
+        .social-link:hover {
+            color: #37474f;
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .line-glow {
+            box-shadow: 0 0 15px rgba(120, 144, 156, 0.2);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+    <!-- 动态浅色背景 -->
+    <div class="ripple-container">
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+    </div>
+
+    <!-- 顶部装饰线 -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1px] h-32 bg-gradient-to-b from-transparent via-slate-300 to-transparent opacity-60"></div>
+
+    <main class="relative z-10 text-center px-8 fade-in-up">
+        <header class="mb-14">
+            <p class="sans text-[10px] tracking-[0.6em] text-slate-400 uppercase mb-8 opacity-80">敬请期待//Coming Soon</p>
+            
+            <div class="relative inline-block group">
+                <h1 class="text-5xl md:text-7xl font-light tracking-[0.4em] mb-4 transition-all duration-1000 group-hover:tracking-[0.5em]">涟环</h1>
+                <div class="absolute -inset-6 border border-slate-200/40 rounded-full scale-110 opacity-40"></div>
+                <div class="absolute -inset-10 border border-slate-100/20 rounded-full scale-125 opacity-20"></div>
+            </div>
+            
+            <h2 class="sans text-xl md:text-2xl font-extralight tracking-[0.2em] text-slate-500 mt-8 italic opacity-70">
+                Ripples of Loops
+            </h2>
+
+            <!-- 新增：制作中 敬请期待 -->
+            <div class="mt-8 space-y-1">
+                <p class="text-[11px] tracking-[0.4em] text-slate-400 font-light">制作中 敬请期待</p>
+                <p class="sans text-[9px] tracking-[0.2em] text-slate-300 uppercase italic">Under Construction // Stay Tuned</p>
+            </div>
+        </header>
+
+        <div class="flex flex-col items-center justify-center space-y-4 mb-12">
+            <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent line-glow"></div>
+            <div class="sans text-[11px] tracking-[0.5em] text-slate-300 font-light uppercase">
+                rol.org.cn
+            </div>
+        </div>
+    </main>
+
+    <!-- 底栏 -->
+    <footer class="fixed bottom-0 left-0 w-full p-8 md:p-12 z-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end md:items-center gap-10">
+            
+            <!-- 版权声明与制作组信息 -->
+            <div class="sans text-left order-2 md:order-1">
+                <div class="text-[10px] tracking-[0.15em] text-slate-400 opacity-90 mb-2 uppercase">
+                    © 2026 miHoYo All Rights Reserved
+                </div>
+                <div class="text-[11px] tracking-[0.2em] text-slate-500 font-medium">
+                    涟环制作组 |《崩坏·星穹铁道》同人游戏
+                </div>
+            </div>
+
+            <!-- 社交图标导航 -->
+            <nav class="flex items-center space-x-10 order-1 md:order-2">
+                <!-- GitHub -->
+                <a href="https://github.com/ripplesofloops" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <!-- Bilibili -->
+                <a href="#" class="social-link" title="Bilibili">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76V17.56c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 19.07 0 17.56V9.987c.036-1.51.556-2.765 1.56-3.76 1.004-.996 2.263-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.536.536 0 0 0 .187-.213l2.853-2.747c.267-.249.573-.373.92-.373.346 0 .652.124.92.373l.027.027c.249.249.373.551.373.907 0 .355-.124.657-.373.906l-1.174 1.12zM5.333 7.147c-.818.036-1.485.31-2.001.827-.516.516-.79 1.182-.826 1.999v7.587c.036.818.31 1.484.826 2.001.516.516 1.183.79 2.001.826h13.334c.817-.036 1.484-.31 2.001-.826.516-.516.79-1.183.826-2.001V9.973c-.036-.817-.31-1.483-.826-1.999-.517-.517-1.184-.791-2.001-.827H5.333zM9.12 11.387c.356 0 .658.124.907.373.249.249.373.551.373.907v2.253c0 .356-.124.658-.373.907a1.234 1.234 0 0 1-.907.373c-.355 0-.657-.124-.906-.373a1.234 1.234 0 0 1-.373-.907v-2.253c0-.356.124-.658.373-.907.249-.249.551-.373.906-.373zm5.76 0c.356 0 .658.124.907.373.249.249.373.551.373.907v2.253c0 .356-.124.658-.373.907a1.234 1.234 0 0 1-.907.373c-.355 0-.657-.124-.906-.373a1.234 1.234 0 0 1-.373-.907v-2.253c0-.356.124-.658.373-.907.249-.249.551-.373.906-.373z"/></svg>
+                </a>
+                <!-- 小红书 -->
+                <a href="#" class="social-link" title="小红书">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.174 15.602c-.378.852-1.157 1.458-2.012 1.636-.85.176-1.72-.036-2.39-.567l-2.083-1.638c-.374-.294-.48-.823-.238-1.246.242-.424.77-.552 1.166-.283l1.968 1.543c.244.19.53.218.784.152.253-.066.42-.236.495-.49.076-.254.02-.533-.16-.764l-4.59-5.914c-.346-.445-.27-.1.03-.027 1.2.3 3.6 1.2 5.4 3.6 1.2 1.6 1.6 3.2 1.6 4.0z"/></svg>
+                </a>
+                <!-- 抖音 -->
+                <a href="#" class="social-link" title="抖音">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.03 1.4-.54 2.79-1.51 3.79-1.46 1.61-4.13 2.15-6.09 1.22-2.04-.92-3.3-3.15-3.04-5.38.16-1.8 1.41-3.48 3.12-4.04 1.11-.38 2.37-.36 3.49-.02.01 1.34.01 2.67.01 4.01-1.14-.36-2.43-.22-3.41.52-.75.54-1.13 1.48-1.01 2.4.1 1.07.89 2.01 1.91 2.27 1.13.31 2.47-.14 3.13-1.11.39-.56.54-1.25.53-1.92V.02z"/></svg>
+                </a>
+                <!-- Lofter -->
+                <a href="#" class="social-link" title="Lofter">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.92 18.06c-.84.84-2.16.84-3 0l-5.4-5.4c-.84-.84-.84-2.16 0-3l5.4-5.4c.84-.84 2.16-.84 3 0s.84 2.16 0 3L13.92 10.2c-.42.42-.42 1.08 0 1.5l3 3c.84.84.84 2.16 0 3.36zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                </a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 氛围装饰光影 -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute -top-32 -right-32 w-[30rem] h-[30rem] bg-slate-200/30 blur-[120px] rounded-full opacity-60"></div>
+        <div class="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-blue-100/20 blur-[120px] rounded-full opacity-50"></div>
+    </div>
+
+</body>
+</html>
